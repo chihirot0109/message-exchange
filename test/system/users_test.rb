@@ -1,9 +1,15 @@
 require "application_system_test_case"
 
-class UsersTest < ApplicationSystemTestCase
-  test "visiting the index" do
-    visit "/users"
+class UsersTest < ActionDispatch::IntegrationTest
 
-    assert_selector "h1", text: "Users"
+  setup do
+    sign_in users(:admin)
+  end
+
+  test "visiting the index" do
+    get users_url
+    assert_select "h1", text: "Users"
+    assert_select ".user-name", count: User.count
+    assert_response :success
   end
 end

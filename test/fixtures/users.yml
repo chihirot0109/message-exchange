@@ -1,0 +1,14 @@
+admin:
+  email: "chi@chi.com"
+  first_name: "Chihiro"
+  last_name: "Tsuda"
+
+one:
+  email: "first@first.com"
+  first_name: "first"
+  last_name: "user"
+
+two:
+  email: "second@second.com"
+  first_name: "first"
+  last_name: "user"
