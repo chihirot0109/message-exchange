@@ -1,33 +1,10 @@
 <div class="container">
   <div class="row">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <h1>Users</h1>
      <% @users.each do |user| %>
-      <div class="col-12 user-name">
-=======
-    <h1>Users</h1>
-<<<<<<< HEAD
-    <% @users.each do |user| %>
-      <div class="col-12">
->>>>>>> 43053ae... installed kaminari and paginate users
-=======
-     <% @users.each do |user| %>
-      <div class="col-12 user-name">
->>>>>>> f21f061... tested index view
-        <%= user.first_name %> <%= user.last_name %>
-      </div>
+        <div class="col-12 user-name">
+          <%= user.first_name %> <%= user.last_name %>
+        </div>
     <% end %>
     <%= paginate @users %>
-<<<<<<< HEAD
-=======
-    <ul>
-      <% @users.each do |user| %>
-        <li><%= user.first_name %> <%= user.last_name %></li>
-      <% end %>
-    </ul>
->>>>>>> 66ec2ea... created users by faker
-=======
->>>>>>> 43053ae... installed kaminari and paginate users
   </div>
 </div>

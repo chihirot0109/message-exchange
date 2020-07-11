@@ -66,16 +66,6 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    capybara (2.15.4)
-      addressable
-      mini_mime (>= 0.1.3)
-      nokogiri (>= 1.3.3)
-      rack (>= 1.0.0)
-      rack-test (>= 0.5.4)
-      xpath (~> 2.0)
-=======
     capybara (3.33.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -84,16 +74,6 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
->>>>>>> 43053ae... installed kaminari and paginate users
-=======
-    capybara (2.15.4)
-      addressable
-      mini_mime (>= 0.1.3)
-      nokogiri (>= 1.3.3)
-      rack (>= 1.0.0)
-      rack-test (>= 0.5.4)
-      xpath (~> 2.0)
->>>>>>> f21f061... tested index view
     childprocess (3.0.0)
     coderay (1.1.3)
     concurrent-ruby (1.1.6)
@@ -205,6 +185,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redis (4.2.1)
+    regexp_parser (1.7.1)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -262,18 +243,8 @@ GEM
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    xpath (2.1.0)
-      nokogiri (~> 1.3)
-=======
     xpath (3.2.0)
       nokogiri (~> 1.8)
->>>>>>> 43053ae... installed kaminari and paginate users
-=======
-    xpath (2.1.0)
-      nokogiri (~> 1.3)
->>>>>>> f21f061... tested index view
     zeitwerk (2.3.1)
 
 PLATFORMS

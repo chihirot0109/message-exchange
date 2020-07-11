@@ -10,15 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
 ActiveRecord::Schema.define(version: 2020_07_11_132010) do
-=======
-ActiveRecord::Schema.define(version: 2020_07_11_073637) do
->>>>>>> f21f061... tested index view
-=======
-ActiveRecord::Schema.define(version: 2020_07_11_132010) do
->>>>>>> c449441... created email confirmation function with device
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,22 +35,11 @@ ActiveRecord::Schema.define(version: 2020_07_11_132010) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
-<<<<<<< HEAD
-
-=======
->>>>>>> f21f061... tested index view
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-<<<<<<< HEAD
-<<<<<<< HEAD
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-=======
->>>>>>> f21f061... tested index view
-=======
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
->>>>>>> c449441... created email confirmation function with device
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

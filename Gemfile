@@ -38,8 +38,6 @@ gem 'pundit'
 
 gem 'faker'
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 gem 'kaminari'
 
 group :development, :test do
@@ -49,19 +47,6 @@ group :development, :test do
 
   gem 'pry-byebug'
 
-=======
-group :development, :test do  gem 'pry-byebug'
->>>>>>> 66ec2ea... created users by faker
-=======
-gem 'kaminari'
-
-group :development, :test do
-  gem 'capybara'
-  gem 'webdrivers', '~> 4.0'
-  gem 'launchy'
-
-  gem 'pry-byebug'
->>>>>>> 43053ae... installed kaminari and paginate users
   gem 'pry-rails'
   gem 'dotenv-rails'
 
