@@ -28,9 +28,12 @@ Rails.application.configure do
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = true
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 43053ae... installed kaminari and paginate users
+=======
+>>>>>>> f21f061... tested index view
   # Disable request forgery protection in test environment.
   config.action_controller.allow_forgery_protection = false
 
