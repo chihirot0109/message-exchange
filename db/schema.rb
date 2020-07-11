@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_07_11_132010) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
+
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
