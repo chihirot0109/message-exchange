@@ -39,6 +39,7 @@ gem 'pundit'
 gem 'faker'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 gem 'kaminari'
 
 group :development, :test do
@@ -51,9 +52,18 @@ group :development, :test do
 =======
 group :development, :test do  gem 'pry-byebug'
 >>>>>>> 66ec2ea... created users by faker
+=======
+gem 'kaminari'
+
+group :development, :test do
+  gem 'pry-byebug'
+>>>>>>> 43053ae... installed kaminari and paginate users
   gem 'pry-rails'
   gem 'dotenv-rails'
 
+  gem 'capybara'
+  gem 'webdrivers', '~> 4.0'
+  gem 'launchy'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
