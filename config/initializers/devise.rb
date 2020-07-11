@@ -25,10 +25,14 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
 <<<<<<< HEAD
+<<<<<<< HEAD
   config.mailer_sender = ENV['SMTP_USER_NAME']
 =======
   config.mailer_sender = 'message.exchange072020@gmail.com'
 >>>>>>> f21f061... tested index view
+=======
+  config.mailer_sender = ENV['SMTP_USER_NAME']
+>>>>>>> c449441... created email confirmation function with device
 
   # Configure the class responsible to send e-mails.
   config.mailer = 'Devise::Mailer'
