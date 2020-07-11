@@ -38,6 +38,7 @@ gem 'pundit'
 
 gem 'faker'
 
+<<<<<<< HEAD
 gem 'kaminari'
 
 group :development, :test do
@@ -47,6 +48,9 @@ group :development, :test do
 
   gem 'pry-byebug'
 
+=======
+group :development, :test do  gem 'pry-byebug'
+>>>>>>> 66ec2ea... created users by faker
   gem 'pry-rails'
   gem 'dotenv-rails'
 
