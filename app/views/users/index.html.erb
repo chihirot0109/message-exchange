@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <h1>Users</h1>
-    <% @users.each do |user| %>
-      <div class="col-12">
+     <% @users.each do |user| %>
+      <div class="col-12 user-name">
         <%= user.first_name %> <%= user.last_name %>
       </div>
     <% end %>
