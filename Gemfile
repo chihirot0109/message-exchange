@@ -46,6 +46,7 @@ group :development, :test do
   gem 'launchy'
 
   gem 'pry-byebug'
+
   gem 'pry-rails'
   gem 'dotenv-rails'
 
