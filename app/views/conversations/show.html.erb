@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container">
   <h1><%= @recipient.first_name %> <%= @recipient.last_name %></h1>
   <% if @conversation.messages.present? %>
     <div id="messages" data-conversation-id="<%= @conversation.id %>">
@@ -6,10 +6,12 @@
         <%= render "messages/message", conversation: @conversation, message: message  %>
       <% end %>
     </div>
+  <% else %>
+      <p class="text-center">Start talking to <%= @recipient.first_name %> !</p>
   <% end %>
   <%= simple_form_for([@conversation, @new_message], remote: true) do |f| %>
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <%= f.input :content , label: false, class: "input-field" %>
-      <%= f.submit 'send', class: "btn btn-inline" %>
+      <%= f.input :content , required: true, label: false, class: "input-field" %>
+      <%= f.submit 'send', class: "btn btn-outline-primary" %>
   <% end %>
 </div>
