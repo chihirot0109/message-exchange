@@ -2,6 +2,12 @@ class ConversationsController < ApplicationController
   def show
     @conversation = Conversation.find(params[:id])
     authorize @conversation
+    @new_message = Message.new
+    if @conversation.starter_id == current_user.id
+      @recipient = User.find(@conversation.recipient_id)
+    else
+      @recipient = User.find(@conversation.starter_id)
+    end
   end
 
   def create

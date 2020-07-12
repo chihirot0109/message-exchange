@@ -1,2 +1,8 @@
-<h1>Conversations#show</h1>
-<p>Find me in app/views/conversations/show.html.erb</p>
+<div class="container">
+  <h1><%= @recipient.first_name %> <%= @recipient.last_name %></h1>
+  <%= render 'messages/index', conversation: @conversation %>
+  <%= simple_form_for([@conversation, @new_message], remote: true) do |f| %>
+      <%= f.input :content , label: false, class: "input-field" %>
+      <%= f.submit 'send', class: "btn btn-inline" %>
+  <% end %>
+</div>
