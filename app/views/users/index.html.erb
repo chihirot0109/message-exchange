@@ -4,13 +4,25 @@
        <% @users.each do |user| %>
           <div class="col-12 user-name">
             <div class="card">
-              <%= user.first_name %> <%= user.last_name %>
+              <div>
+                <%= user.first_name %> <%= user.last_name %>
+              </div>
               <div class="card-icons">
-
+                <% conversation = @conversations.find_by(starter_id: user.id) || @conversations.find_by(recipient_id: user.id) %>
+                <% if conversation %>
+                  <%= link_to 'see', conversation_path(conversation)  %>
+                <% else %>
+                  <%= simple_form_for(@new_conversation) do |f| %>
+                      <%= f.input :starter_id, as: :hidden, input_html: { value: current_user.id } %>
+                      <%= f.input :recipient_id, as: :hidden, input_html: { value: user.id } %>
+                      <%= f.submit 'create' %>
+                  <% end %>
+                <% end %>
               </div>
             </div>
           </div>
       <% end %>
+
       <%= paginate @users %>
     </div>
   </div>
