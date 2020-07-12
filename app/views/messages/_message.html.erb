@@ -1,15 +1,18 @@
-<% if message.sender_id == current_user.id %>
-  <div class="content-card content-organizer" id="message-<%= message.id %>">
+<% sender = User.find(message.sender_id) %>
+<% if sender.id == current_user.id %>
+  <div class="content-card content-organizer" >
     <div class="d-flex align-items-center">
       <div>
         <div class="user-info-message">
           <p class="mr-3"><small><%= current_user.first_name %> <%= current_user.last_name %></small></p>
-          <p><small><%= message.created_at.strftime('%H:%M') %></small></p>
+          <p><small><%= message.created_at.in_time_zone("Asia/Tokyo").strftime('%H:%M') %></small></p>
         </div>
-        <p class="content"><%= message.content %></p>
+        <div id="message-<%= message.id %>">
+          <p class="content"><%= message.content %></p>
+        </div>
       </div>
       <div class="user">
-        <p>You</p>
+        <p>you</p>
       </div>
     </div>
   </div>
@@ -17,17 +20,17 @@
   <div class="content-card" id="message-<%= message.id %>">
     <div class="d-flex align-items-center">
       <div class="user">
-        <% sender = User.find(message.sender_id) %>
-        <p><%= sender.first_name %></p>
+        <%= sender.first_name %>
       </div>
       <div>
         <div class="user-info-message">
           <p><small><%= sender.first_name %> <%= sender.last_name %></small></p>
-          <p><small><%= message.created_at.strftime('%H:%M') %></small></p>
+          <p><small><%= message.created_at.in_time_zone("Asia/Tokyo").strftime('%H:%M') %></small></p>
         </div>
-        <p class="content"><%= message.content %></p>
+        <div id="message-<%= message.id %>">
+          <p class="content"><%= message.content %></p>
+        </div>
       </div>
     </div>
   </div>
 <% end %>
-

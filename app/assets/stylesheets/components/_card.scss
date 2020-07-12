@@ -7,3 +7,34 @@
   align-items: center;
   flex-direction: row;
 }
+
+.content {
+  background-color: white;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+.user {
+  width: 50px;
+  margin: 12px;
+}
+
+#message- {
+  display: none;
+}
+
+#question- {
+  display: none;
+}
+
+.content-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 120px;
+}
+
+.content-card.content-organizer {
+  justify-content: flex-end;
+}

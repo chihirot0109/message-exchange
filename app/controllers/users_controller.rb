@@ -4,4 +4,7 @@ class UsersController < ApplicationController
     @conversations = Conversation.where('starter_id = ? OR recipient_id = ?', current_user.id, current_user.id)
     @new_conversation = Conversation.new
   end
+
+  def show
+  end
 end

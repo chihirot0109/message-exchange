@@ -1,7 +1,14 @@
-<div class="container">
+<div class="container text-center">
   <h1><%= @recipient.first_name %> <%= @recipient.last_name %></h1>
-  <%= render 'messages/index', conversation: @conversation %>
+  <% if @conversation.messages.present? %>
+    <div id="messages" data-conversation-id="<%= @conversation.id %>">
+      <% @conversation.messages.order(created_at: :asc).each do |message| %>
+        <%= render "messages/message", conversation: @conversation, message: message  %>
+      <% end %>
+    </div>
+  <% end %>
   <%= simple_form_for([@conversation, @new_message], remote: true) do |f| %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <%= f.input :content , label: false, class: "input-field" %>
       <%= f.submit 'send', class: "btn btn-inline" %>
   <% end %>
