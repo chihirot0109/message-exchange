@@ -11,10 +11,10 @@
           <% end %>
         <% else %>
           <%= simple_form_for(@new_conversation) do |f| %>
-              <%= f.input :starter_id, as: :hidden, input_html: { value: current_user.id } %>
-              <%= f.input :recipient_id, as: :hidden, input_html: { value: user.id } %>
               <div class="card">
                 <%= user.first_name %> <%= user.last_name %>
+                <%= f.input :starter_id, as: :hidden, input_html: { value: current_user.id } %>
+                <%= f.input :recipient_id, as: :hidden, input_html: { value: user.id } %>
                 <%= button_tag type: "submit", class: "card-conversation-path"%>
               </div>
           <% end %>
