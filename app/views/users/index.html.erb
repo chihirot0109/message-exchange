@@ -1,10 +1,17 @@
-<div class="container">
-  <div class="row">
-     <% @users.each do |user| %>
-        <div class="col-12 user-name">
-          <%= user.first_name %> <%= user.last_name %>
-        </div>
-    <% end %>
-    <%= paginate @users %>
+<div class="users">
+  <div class="container">
+    <div class="row">
+       <% @users.each do |user| %>
+          <div class="col-12 user-name">
+            <div class="card">
+              <%= user.first_name %> <%= user.last_name %>
+              <div class="card-icons">
+
+              </div>
+            </div>
+          </div>
+      <% end %>
+      <%= paginate @users %>
+    </div>
   </div>
 </div>
