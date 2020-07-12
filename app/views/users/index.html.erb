@@ -6,7 +6,10 @@
         <% if conversation %>
           <%= link_to conversation_path(conversation) do %>
             <div class="card">
-              <%= user.first_name %> <%= user.last_name %>
+              <div>
+                <%= user.first_name %> <%= user.last_name %>
+              </div>
+              <%= conversation.messages.present? ? "#{conversation.messages.last.created_at.in_time_zone("Asia/Tokyo").strftime('%m/%d %H:%M')}" : "No message" %>
             </div>
           <% end %>
         <% else %>
@@ -16,6 +19,9 @@
                 <%= f.input :starter_id, as: :hidden, input_html: { value: current_user.id } %>
                 <%= f.input :recipient_id, as: :hidden, input_html: { value: user.id } %>
                 <%= button_tag type: "submit", class: "card-conversation-path"%>
+                <div class="mt-2">
+                  <p>No message</p>
+                </div>
               </div>
           <% end %>
         <% end %>
