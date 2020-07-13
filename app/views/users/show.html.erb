@@ -1,3 +1,26 @@
 <div class="container">
-  <h1>Profile</h1>
+  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+  <% if @conversation %>
+    <div id="messages" data-conversation-id="<%= @conversation.id %>">
+      <% @conversation.messages.order(created_at: :asc).each do |message| %>
+        <%= render "messages/message", conversation: @conversation, message: message  %>
+      <% end %>
+    </div>
+    <%= simple_form_for([@conversation, @new_message], remote: true) do |f| %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= f.input :content , required: true, label: false, class: "input-field" %>
+        <%= f.submit 'send', class: "btn btn-outline-primary" %>
+    <% end %>
+  <% else %>
+    <p class="text-center">Start talking to <%= @user.first_name %> !</p>
+    <%= simple_form_for(@new_conversation) do |f| %>
+      <%= f.input :starter_id, as: :hidden, input_html: { value: current_user.id } %>
+      <%= f.input :recipient_id, as: :hidden, input_html: { value: @user.id } %>
+      <%= f.simple_fields_for :messages do |message_form| %>
+        <%= message_form.input :content, label: false %>
+      <% end %>
+      <%= f.submit class: "btn btn-outline-primary" %>
+    <% end %>
+  <% end %>
 </div>
+

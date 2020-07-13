@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   before_save :capitalize_name
   before_update :capitalize_name
-  after_create :create_conversations
 
   has_many :conversations, dependent: :destroy
   # Include default devise modules. Others available are:
@@ -14,10 +13,7 @@ class User < ApplicationRecord
     self.last_name = last_name.capitalize
   end
 
-  def create_conversations
-    users = User.where.not('id = ?', self.id)
-    users.each do |user|
-      Conversation.create(user: self, recipient_id: user.id)
-    end
+  def conversations
+    Conversation.where(starter_id: id).or(Conversation.where(recipient_id: id))
   end
 end
