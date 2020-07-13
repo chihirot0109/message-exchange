@@ -1,16 +1,17 @@
-<div class="container">
-
-     <% @conversations.each do |conversation| %>
-
-          <%= link_to conversation_path(conversation) do %>
-            <div class="col-12 card">
-              <div>
-                <% user = User.find(conversation.recipient_id) %>
-                <%= user.first_name %> <%= user.last_name %>
-              </div>
-              <%= conversation.messages.present? ? "#{conversation.messages.last.created_at.in_time_zone("Asia/Tokyo").strftime('%m/%d %H:%M')}" : "" %>
-            </div>
-          <% end %>
-        <% end %>
-<%= paginate @conversations %>
+<div class="container conversations">
+   <% @conversations.each do |conversation| %>
+      <%= link_to conversation_path(conversation) do %>
+        <div class="col-12 card user-name">
+          <div>
+            <% user = User.find(conversation.recipient_id) %>
+            <%= user.first_name %> <%= user.last_name %>
+          </div>
+          <div class=conversation-details>
+            <p><%= conversation.messages.present? ? "【#{conversation.messages.count}】" : "" %></p>
+            <p><%= conversation.messages.present? ? "#{conversation.messages.last.created_at.in_time_zone("Asia/Tokyo").strftime('%m/%d %H:%M')}" : "" %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <%= paginate @conversations %>
 </div>

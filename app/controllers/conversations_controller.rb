@@ -1,11 +1,8 @@
 class ConversationsController < ApplicationController
   skip_after_action :verify_policy_scoped, only: :index
   def index
-    with_messages = current_user.conversations.joins(:messages).order('messages.created_at DESC')
-    without_messages = []
-    current_user.conversations.each do |c|
-      without_messages.push(c) unless c.messages.present?
-    end
+    with_messages = current_user.conversations.joins(:messages).order('messages.created_at DESC').uniq
+    without_messages = current_user.conversations.includes(:messages).where(messages: { conversation_id: nil })
     @conversations = with_messages + without_messages
     @conversations = Kaminari.paginate_array(@conversations).page(params[:page]).per(20)
   end
