@@ -4,7 +4,7 @@
     <div class="d-flex align-items-center">
       <div>
         <div class="user-info-message">
-          <p class="mr-3"><small><%= current_user.first_name %> <%= current_user.last_name %></small></p>
+          <p class="mr-3"><small><%= current_user.name %></small></p>
           <p><small><%= message.created_at.in_time_zone("Asia/Tokyo").strftime('%H:%M') %></small></p>
         </div>
         <div id="message-<%= message.id %>">
@@ -20,11 +20,11 @@
   <div class="content-card" id="message-<%= message.id %>">
     <div class="d-flex align-items-center">
       <div class="user">
-        <%= sender.first_name %>
+        <%= sender.name %>
       </div>
       <div>
         <div class="user-info-message">
-          <p><small><%= sender.first_name %> <%= sender.last_name %></small></p>
+          <p><small><%= sender.name %></small></p>
           <p><small><%= message.created_at.in_time_zone("Asia/Tokyo").strftime('%H:%M') %></small></p>
         </div>
         <div id="message-<%= message.id %>">

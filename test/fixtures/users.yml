@@ -1,14 +1,11 @@
 admin:
   email: "chi@chi.com"
-  first_name: "Chihiro"
-  last_name: "Tsuda"
+  name: "Chihiro Tsuda"
 
 one:
   email: "first@first.com"
-  first_name: "first"
-  last_name: "user"
+  name: "Admin One"
 
 two:
   email: "second@second.com"
-  first_name: "first"
-  last_name: "user"
+  name: "Admin Two"

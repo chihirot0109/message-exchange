@@ -8,7 +8,7 @@
       <% end %>
       <%= link_to conversation_path(item) do %>
         <div class="card col-12 user-name">
-          <%= user.first_name %> <%= user.last_name %>
+          <%= user.name %>
           <%= item.messages.last.created_at.in_time_zone("Asia/Tokyo").strftime('%m/%d %H:%M') %>
           <%= item.messages.count %>
         </div>
@@ -18,7 +18,7 @@
         <% current_user.conversations.find_by(starter_id: item.id) ? c = current_user.conversations.find_by(starter_id: item.id) : c =  current_user.conversations.find_by(recipient_id: item.id) %>
           <%= link_to conversation_path(c) do %>
             <div class="card col-12 user-name">
-              <%= item.first_name %> <%= item.last_name %>
+              <%= item.name %>
             </div>
           <% end %>
       <% else %>
@@ -26,7 +26,7 @@
         <%= f.input :starter_id, as: :hidden, input_html: { value: current_user.id } %>
         <%= f.input :recipient_id, as: :hidden, input_html: { value: item.id } %>
         <div class="card col-12 user-name">
-          <%= item.first_name %> <%= item.last_name %>
+          <%= item.name %>
           <%= button_tag type: "submit", class: "card-conversation-path"%>
         </div>
         <% end %>

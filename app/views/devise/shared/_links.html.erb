@@ -20,6 +20,13 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+  <% if OmniAuth::Utils.camelize(provider) == "GoogleOauth2" %>
+      <% sns = "Google" %>
+  <% elsif OmniAuth::Utils.camelize(provider) == "Facebook" %>
+      <% sns = "Facebook" %>
+  <% else %>
+      <%= sns = "SNS" %>
+  <% end %>
+    <%= link_to "Sign in with #{sns}", omniauth_authorize_path(resource_name, provider) %><br />
   <% end %>
 <% end %>

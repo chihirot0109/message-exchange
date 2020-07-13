@@ -1,5 +1,5 @@
 <div class="container">
-  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+  <h1><%= @user.name %></h1>
   <% if @conversation %>
     <div id="messages" data-conversation-id="<%= @conversation.id %>">
       <% @conversation.messages.order(created_at: :asc).each do |message| %>
@@ -12,7 +12,7 @@
         <%= f.submit 'send', class: "btn btn-outline-primary" %>
     <% end %>
   <% else %>
-    <p class="text-center">Start talking to <%= @user.first_name %> !</p>
+    <p class="text-center">Start talking to <%= @user.name %> !</p>
     <%= simple_form_for(@new_conversation) do |f| %>
       <%= f.input :starter_id, as: :hidden, input_html: { value: current_user.id } %>
       <%= f.input :recipient_id, as: :hidden, input_html: { value: @user.id } %>
