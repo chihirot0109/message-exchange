@@ -7,8 +7,8 @@
             <%= user.first_name %> <%= user.last_name %>
           </div>
           <div class=conversation-details>
-            <p><%= conversation.messages.present? ? "【#{conversation.messages.count}】" : "" %></p>
             <p><%= conversation.messages.present? ? "#{conversation.messages.last.created_at.in_time_zone("Asia/Tokyo").strftime('%m/%d %H:%M')}" : "" %></p>
+            <p><%= conversation.messages.present? ? "【#{conversation.messages.count}】" : "" %></p>
           </div>
         </div>
       <% end %>
