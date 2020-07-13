@@ -1,5 +1,6 @@
 <div class="container">
   <h1><%= @recipient.first_name %> <%= @recipient.last_name %></h1>
+  <p>Joined <%= @recipient.created_at.in_time_zone("Asia/Tokyo").strftime('%y/%m/%d') %></p>
   <% if @conversation.messages.present? %>
     <div id="messages" data-conversation-id="<%= @conversation.id %>">
       <% @conversation.messages.order(created_at: :asc).each do |message| %>
