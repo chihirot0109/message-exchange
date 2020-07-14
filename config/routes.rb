@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     omniauth_callbacks: "omniauth_callbacks"
   }
   root to: 'pages#home'
+  get '/privacy', to: 'pages#privacy'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users, only: [:index]
     resources :conversations, only: [:show, :create] do
