@@ -1,6 +1,5 @@
 class Api::V1::ConversationsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User, except: [:index, :show]
-  before_action :set_conversation, only: [:show]
 
   def index
     @conversations = policy_scope(Conversation)
