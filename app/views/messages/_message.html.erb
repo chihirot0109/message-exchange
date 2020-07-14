@@ -1,31 +1,31 @@
 <% sender = User.find(message.sender_id) %>
 <% if sender.id == current_user.id %>
   <div class="content-card content-organizer" >
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-end">
       <div>
-        <div class="user-info-message">
-          <p class="mr-3"><small><%= current_user.name %></small></p>
-          <p><small><%= message.created_at.in_time_zone("Asia/Tokyo").strftime('%H:%M') %></small></p>
+        <div class="message-info d-flex justify-content-end align-items-center">
+          <p><%= current_user.name %></p>
+          <p><%= message.created_at.in_time_zone("Asia/Tokyo").strftime('%H:%M') %></p>
         </div>
         <div id="message-<%= message.id %>">
-          <p class="content"><%= message.content %></p>
+          <p class="content-current-user"><%= message.content %></p>
         </div>
       </div>
       <div class="user">
-        <p>you</p>
+        <i class="fas fa-user"></i>
       </div>
     </div>
   </div>
 <% else %>
   <div class="content-card" id="message-<%= message.id %>">
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-end">
       <div class="user">
-        <%= sender.name %>
+        <i class="far fa-user"></i>
       </div>
       <div>
-        <div class="user-info-message">
-          <p><small><%= sender.name %></small></p>
-          <p><small><%= message.created_at.in_time_zone("Asia/Tokyo").strftime('%H:%M') %></small></p>
+        <div class="message-info d-flex justify-content-start align-items-center">
+          <p><%= sender.name %></p>
+          <p><%= message.created_at.in_time_zone("Asia/Tokyo").strftime('%H:%M') %></p>
         </div>
         <div id="message-<%= message.id %>">
           <p class="content"><%= message.content %></p>

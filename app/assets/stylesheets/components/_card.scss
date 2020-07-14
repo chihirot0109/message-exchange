@@ -65,13 +65,19 @@
 .content {
   background-color: white;
   box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
-  border-radius: 30px;
+  border-radius: 25px 25px 25px 1px;
   padding: 10px 20px;
 }
 
-.user {
-  width: 50px;
-  margin: 12px;
+.content-current-user {
+  background-color: white;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+  border-radius: 25px 25px 1px;
+  padding: 10px 20px;
+}
+
+.fa-user {
+  margin: 0px 10px;
 }
 
 #message- {
