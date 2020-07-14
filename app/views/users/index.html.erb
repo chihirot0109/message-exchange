@@ -13,7 +13,9 @@
             <% if item.messages.last.read == false && item.messages.last.sender != current_user %>
               <i class="fas fa-envelope-square"></i>
             <% end %>
-              <%= user.name.upcase %>
+              <div class="card-message-user">
+                <%= user.name %>
+              </div>
               <p><%= item.messages.last.content[0..20] %>...<p>
           </div>
           <div class="card-info">
@@ -28,14 +30,14 @@
           <%= link_to conversation_path(c) do %>
             <div class="card user-name">
               <div class="card-message">
-                <%= item.name.upcase %>
+                <%= item.name %>
               </div>
             </div>
           <% end %>
       <% else %>
         <div class="card user-name">
           <div class="card-message">
-            <%= item.name.upcase %>
+            <%= item.name %>
             <%= simple_form_for(@new_conversation) do |f| %>
             <%= f.input :starter_id, as: :hidden, input_html: { value: current_user.id } %>
             <%= f.input :recipient_id, as: :hidden, input_html: { value: item.id } %>

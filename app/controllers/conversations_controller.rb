@@ -7,8 +7,12 @@ class ConversationsController < ApplicationController
     @recipient = User.find(@conversation.recipient_id)
     if @conversation.messages.present?
       @conversation.messages.each do |message|
-        message.read = true
-        message.save
+        if message.sender != current_user
+          message.read = true
+          message.save
+        else
+          message
+        end
       end
     end
   end
