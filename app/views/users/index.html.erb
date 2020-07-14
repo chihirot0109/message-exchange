@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Friends</h2>
+  <h2>Members</h2>
   <% @list.each do |item| %>
     <% if item.class == Conversation %>
       <% if item.starter_id == current_user.id %>
