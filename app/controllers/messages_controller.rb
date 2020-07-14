@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     authorize @message
     @message.conversation = @conversation
-    @message.sender_id = current_user.id
+    @message.sender = current_user
     if @message.save
       ConversationChannel.broadcast_to(
         @conversation,

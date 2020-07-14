@@ -4,6 +4,7 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     authorize @conversation
     @new_message = Message.new
+    @num = current_user.id
     @recipient = User.find(@conversation.recipient_id)
     if @conversation.messages.present?
       @conversation.messages.each do |message|

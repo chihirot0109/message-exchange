@@ -1,5 +1,4 @@
-<% sender = User.find(message.sender_id) %>
-<% if sender.id == current_user.id %>
+<% if message.sender_id == @num %>
   <div class="content-card content-organizer" >
     <div class="d-flex align-items-end">
       <div>
@@ -24,7 +23,7 @@
       </div>
       <div>
         <div class="message-info d-flex justify-content-start align-items-center">
-          <p><%= sender.name %></p>
+          <p><%= message.sender.name %></p>
           <p><%= message.created_at.in_time_zone("Asia/Tokyo").strftime('%H:%M') %></p>
         </div>
         <div id="message-<%= message.id %>">
