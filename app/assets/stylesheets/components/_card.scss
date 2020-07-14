@@ -95,9 +95,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 120px;
 }
 
 .content-card.content-organizer {
   justify-content: flex-end;
 }
+
+
+@media (max-width: 540px) {
+  .user-name {
+    font-size: 14px;
+  }
+
+  .card-message-user {
+    width: 100px;
+  }
+  .card-info {
+    font-size: 11px;
+  }
+  .content-card.content-organizer {
+    justify-content: unset;
+  }
+}
+

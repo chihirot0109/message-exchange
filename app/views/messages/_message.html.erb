@@ -1,6 +1,6 @@
 <% if message.sender_id == @num %>
   <div class="content-card content-organizer" >
-    <div class="d-flex align-items-end">
+    <div class="d-flex align-items-end message-content">
       <div>
         <div class="message-info d-flex justify-content-end align-items-center">
           <p><%= current_user.name %></p>
@@ -17,7 +17,7 @@
   </div>
 <% else %>
   <div class="content-card" id="message-<%= message.id %>">
-    <div class="d-flex align-items-end">
+    <div class="d-flex align-items-end message-content">
       <div class="user">
         <i class="far fa-user"></i>
       </div>
