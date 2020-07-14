@@ -2,7 +2,7 @@ require 'faker'
 
 puts "Start seeding"
 
-30.times do
+50.times do
   User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.email,

@@ -43,6 +43,7 @@ gem 'pundit'
 gem 'faker'
 
 gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 group :development, :test do
   gem 'capybara'

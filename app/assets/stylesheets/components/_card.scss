@@ -1,5 +1,5 @@
 .card {
-  height: 80px;
+  height: 60px;
   padding: 20px;
   margin: 1px;
   border-radius: 4px;
@@ -11,6 +11,32 @@
   box-shadow: 1px 2px 4px rgba(0,0,0,0.4);
   &:hover {
     box-shadow: none;
+  }
+}
+
+.card-message {
+  flex-grow: 1;
+  color: $dark-blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    color: gray;
+    margin: 0 auto;
+  }
+}
+.card:hover .card-message {
+  color: gray;
+}
+
+.card-info {
+  text-align: center;
+  color: $light-blue;
+  .card-info-message {
+    width: 27px;
+    margin: 0 auto;
+    border: solid 1px $light-blue;
+    border-radius: 50%;
   }
 }
 
