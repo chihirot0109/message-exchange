@@ -5,6 +5,12 @@ class ConversationsController < ApplicationController
     authorize @conversation
     @new_message = Message.new
     @recipient = User.find(@conversation.recipient_id)
+    if @conversation.messages.present?
+      @conversation.messages.each do |message|
+        message.read = true
+        message.save
+      end
+    end
   end
 
   def create

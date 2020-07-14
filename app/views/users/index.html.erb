@@ -10,8 +10,11 @@
       <%= link_to conversation_path(item) do %>
         <div class="card user-name">
           <div class="card-message">
-            <%= user.name.upcase %>
-            <p><small><%= item.messages.last.content[0..20] %>...</small><p>
+            <% if item.messages.last.read == false && item.messages.last.sender != current_user %>
+              <i class="fas fa-envelope-square"></i>
+            <% end %>
+              <%= user.name.upcase %>
+              <p><%= item.messages.last.content[0..20] %>...<p>
           </div>
           <div class="card-info">
             <small><%= item.messages.last.created_at.in_time_zone("Asia/Tokyo").strftime('%m/%d %H:%M') %></small>
