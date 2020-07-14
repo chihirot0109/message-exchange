@@ -9,16 +9,4 @@ class UsersController < ApplicationController
     @list = Kaminari.paginate_array(@list).page(params[:page]).per(20)
     @new_conversation = Conversation.new
   end
-
-  def show
-    @user = User.find(params[:id])
-    authorize @user
-    if Conversation.find_by(starter_id: params[:id])
-      @conversation = Conversation.find_by(starter_id: params[:id])
-    elsif Conversation.find_by(starter_id: params[:id])
-      @conversation = Conversation.find_by(starter_id: params[:id])
-    else
-      @conversation = nil
-    end
-  end
 end
