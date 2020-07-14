@@ -20,7 +20,10 @@
           </div>
           <div class="card-info">
             <small><%= item.messages.last.created_at.in_time_zone("Asia/Tokyo").strftime('%m/%d %H:%M') %></small>
-            <p class="card-info-message"><%= item.messages.count %></p>
+            <div class="card-info-message">
+              <p><%= item.messages.count %></p>
+              <i class="fas fa-xs fa-comments"></i>
+            </div>
           </div>
         </div>
       <% end %>

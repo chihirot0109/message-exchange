@@ -45,10 +45,13 @@
   text-align: center;
   color: $light-blue;
   .card-info-message {
-    width: 27px;
-    margin: 0 auto;
-    border: solid 1px $light-blue;
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: $dark-blue;
+    p {
+      margin: 0 4px;
+    }
   }
 }
 
