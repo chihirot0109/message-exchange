@@ -39,6 +39,7 @@ gem 'simple_form'
 gem 'dotenv-rails'
 
 gem 'pundit'
+gem 'simple_token_authentication'
 
 gem 'faker'
 
