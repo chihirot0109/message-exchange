@@ -1,6 +1,6 @@
 <div class="container">
-  <h1><%= @recipient.name %></h1>
-  <p>Joined <%= @recipient.created_at.in_time_zone("Asia/Tokyo").strftime('%y/%m/%d') %></p>
+  <h2><%= @recipient.name %></h2>
+  <p class="text-right mb-5">Joined <%= @recipient.created_at.in_time_zone("Asia/Tokyo").strftime('%y/%m/%d') %></p>
   <% if @conversation.messages.present? %>
     <div id="messages" data-conversation-id="<%= @conversation.id %>">
       <% @conversation.messages.order(created_at: :asc).each do |message| %>
@@ -13,6 +13,6 @@
   <%= simple_form_for([@conversation, @new_message], remote: true) do |f| %>
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <%= f.input :content , required: true, label: false, class: "input-field" %>
-      <%= f.submit 'send', class: "btn btn-outline-primary" %>
+      <%= f.submit 'send', class: "btn btn-outline-primary btn-submit" %>
   <% end %>
 </div>
