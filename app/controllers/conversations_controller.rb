@@ -5,7 +5,7 @@ class ConversationsController < ApplicationController
     authorize @conversation
     @new_message = Message.new
     @num = current_user.id
-    @recipient = User.find(@conversation.recipient_id)
+    @conversation.recipient == current_user ? @recipient = @conversation.starter : @recipient = @conversation.recipient
     if @conversation.messages.present?
       @conversation.messages.each do |message|
         if message.sender != current_user
