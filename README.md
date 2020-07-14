@@ -32,7 +32,7 @@ if you deploy to heroku for your production.
 
 ## Messagere API
 
-*GET
+* GET
 
 For fetching your conversations, you can make get request with
 ```
@@ -43,7 +43,7 @@ To check your conversation id, please check the URL of your conversation page wi
 https://www.messagere.xyz/conversations/<HERE>
 ```
 
-*POST
+* POST
 
 For creating conversation and message, you will need to get your access token. 
 To request for your access token, please send your message to 'Admin' through this application after you log in.
