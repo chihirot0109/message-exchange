@@ -1,7 +1,19 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "https://www.messagere.xyz" }
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_caching = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => ENV['SMTP_USER_NAME'],
+    :password => ENV['SMTP_PASSWD'],
+    :authentication => 'plain',
+    :enable_starttls_auto => true,
+  }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -61,7 +73,6 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "restaurants_with_pundit_production"
 
-  config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
