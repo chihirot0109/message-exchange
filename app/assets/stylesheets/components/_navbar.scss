@@ -1,7 +1,10 @@
 .navbar {
   width: 100%;
   background-color: $dark-blue;
-  a { color: white;
+  opacity: 0.9;
+  a {
+  color: white;
+  font-size: 14px;
   }
 }
 
