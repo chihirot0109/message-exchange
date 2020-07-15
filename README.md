@@ -7,7 +7,9 @@ You can also chat with members without reloading the page each time.
 
 ## Built With
 
-* [Le Wagon Devise Template](https://github.com/lewagon/rails-templates) - This template enables you to start with basic bootstrap styles with Google fonts, and devise gem installed. However, this has several limits for devise fuctions and you need to change some codes in applicatio.rb if necessary. 
+* [Le Wagon Devise Template](https://github.com/lewagon/rails-templates) - This template enables you to start with postgresql and devise gem installed. However, this has several limits for devise fuctions and you need to change codes in applicatio.rb if necessary. 
+* [Omniauth](https://github.com/omniauth/omniauth) - For SNS sign up and login, used this gem together with [Omniauth for facebook](https://github.com/simi/omniauth-facebook) and [Omniauth for Google](https://github.com/zquestz/omniauth-google-oauth2)
+* [Kaminari](https://github.com/kaminari/kaminari) - For pagination used Kaminari gem styled by [Bootsrap4 Kaminari](https://github.com/KamilDzierbicki/bootstrap4-kaminari-views)
 
 ## Getting Started
 
