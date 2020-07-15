@@ -8,7 +8,7 @@ class UsersTest < ActionDispatch::IntegrationTest
 
   test "visiting the index" do
     get users_url
-    assert_select "h1", text: "Users"
+    assert_select "h2", text: "MEMBERS"
     assert_select ".user-name", count: User.count
     assert_response :success
   end
