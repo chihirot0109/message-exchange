@@ -3,7 +3,7 @@
 Application for easy message exchange and chatting with members!
 With this app, you will be able to send & receive messages among app members.
 You can also chat with members without reloading the page each time.
-* [Messagere](https://www.messagere.xyz/) - Try sign up and log in to start chatting with members.
+* [Messagere](https://www.messagere.xyz/) - Try to sign up and log in to start chatting with members.
 
 ## Built With
 
@@ -65,7 +65,7 @@ curl -i -X POST                                                              \
      -H 'Content-Type: application/json'                                     \
      -H 'X-User-Email: YOUR_LOG_IN_EMAIL'                                      \
      -H 'X-User-Token: YOUR_TOKEN'                                 \
-     -d '{ "message": { "starter_id": XX, "recipient_id": XX } }' \
+     -d '{ "message": { "sender_id": XX, "content": "XXXX" } }' \
      http://localhost:3000/api/v1/conversations/:conversation_id/messages
 ```
 
