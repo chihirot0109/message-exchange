@@ -3,7 +3,7 @@
 Application for easy message exchange and chatting with members!
 With this app, you will be able to send & receive messages among app members.
 You can also chat with members without reloading the page each time.
-* [Messagere](https://www.messagere.xyz/) - Try to sign up and log in to start chatting with members.
+* Messagere - Try to sign up and log in to start chatting with members.
 
 ## Built With
 
